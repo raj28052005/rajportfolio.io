@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajvardhan Prasad | Electrical Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#8b5cf6',
+                        dark: '#0f172a',
+                        darker: '#020617',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'gradient': 'gradient 8s ease infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        #mechanismContainer {
+            width: 100%;
+            height: 100%;
+            outline: none;
+        }
+        .neon-border {
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.6), 0 0 16px rgba(139, 92, 246, 0.4);
+        }
+        .neon-text {
+            text-shadow: 0 0 8px rgba(59, 130, 246, 0.8);
+        }
+        .gradient-bg {
+            background: linear-gradient(-45deg, #0f172a, #1e293b, #1e1b4b, #0f172a);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen text-slate-200 font-sans">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-feather="zap" class="text-primary neon-text"></i>
+                <span class="text-xl font-bold neon-text">Rajvardhan Prasad</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#contact" class="px-4 py-2 rounded-full bg-primary/10 border border-primary/30 hover:bg-primary/20 transition-all flex items-center space-x-2 neon-border">
+                    <i data-feather="mail" class="w-4 h-4"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="tel:+9197496404599" class="px-4 py-2 rounded-full bg-primary/10 border border-primary/30 hover:bg-primary/20 transition-all flex items-center space-x-2 neon-border">
+                    <i data-feather="phone" class="w-4 h-4"></i>
+                    <span>Call</span>
+                </a>
+                <a href="mailto:rajvardhanprasad625@gmail.com" class="px-4 py-2 rounded-full bg-primary/10 border border-primary/30 hover:bg-primary/20 transition-all flex items-center space-x-2 neon-border">
+                    <i data-feather="send" class="w-4 h-4"></i>
+                    <span>Email</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <!-- Hero Section -->
+        <section class="flex flex-col md:flex-row items-center justify-between gap-12 mb-20">
+            <div class="w-full md:w-1/3 flex justify-center" data-aos="fade-right">
+                <div class="relative">
+                    <img src="https://i.ibb.co/8ngL90h/rajvardhan.jpg" alt="Rajvardhan Prasad" class="w-64 h-64 rounded-full object-cover border-4 border-primary/30 neon-border">
+                    <div class="absolute inset-0 rounded-full border-4 border-transparent animate-pulse-slow"></div>
+                </div>
+            </div>
+            <div class="w-full md:w-2/3" data-aos="fade-left">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 neon-text">Rajvardhan Prasad</h1>
+                <div class="flex items-center text-slate-400 mb-6">
+                    <i data-feather="map-pin" class="w-5 h-5 mr-2"></i>
+                    <span>Asansol, India — 713303</span>
+                </div>
+                <p class="text-lg text-slate-300 mb-8 leading-relaxed">
+                    "Detail-oriented Electrical Engineer with strong skills in circuit design, control systems, and renewable energy. Eager to contribute technical expertise and innovative problem-solving abilities to dynamic engineering projects."
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#skills" class="px-6 py-3 rounded-full bg-primary hover:bg-primary/90 text-white font-medium transition-all flex items-center space-x-2 neon-border">
+                        <i data-feather="award" class="w-5 h-5"></i>
+                        <span>View Skills & Education</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-8 neon-text">Contact</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 neon-border hover:border-primary/50 transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 rounded-full bg-primary/10 mr-4">
+                            <i data-feather="phone" class="text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Phone</h3>
+                    </div>
+                    <p class="text-slate-300">+91 97496 404599</p>
+                </div>
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 neon-border hover:border-primary/50 transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 rounded-full bg-primary/10 mr-4">
+                            <i data-feather="mail" class="text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Email</h3>
+                    </div>
+                    <p class="text-slate-300">rajvardhanprasad625@gmail.com</p>
+                </div>
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 neon-border hover:border-primary/50 transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 rounded-full bg-primary/10 mr-4">
+                            <i data-feather="map-pin" class="text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Location</h3>
+                    </div>
+                    <p class="text-slate-300">Asansol, India — 713303</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-8 neon-text">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 neon-border">
+                    <h3 class="text-xl font-semibold mb-4">Technical Skills</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="text-primary mr-2 w-4 h-4"></i>
+                            <span>Circuit Design</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="text-primary mr-2 w-4 h-4"></i>
+                            <span>Electrical Machines</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="text-primary mr-2 w-4 h-4"></i>
+                            <span>Power Systems</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="text-primary mr-2 w-4 h-4"></i>
+                            <span>Automation & Controls</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="text-primary mr-2 w-4 h-4"></i>
+                            <span>Renewable Energy</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 neon-border">
+                    <h3 class="text-xl font-semibold mb-4">Software & Tools</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="text-primary mr-2 w-4 h-4"></i>
+                            <span>AutoCAD Electrical</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="text-primary mr-2 w-4 h-4"></i>
+                            <span>SolidWorks Electrical</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="text-primary mr-2 w-4 h-4"></i>
+                            <span>MATLAB & Simulink</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="text-primary mr-2 w-4 h-4"></i>
+                            <span>PSpice/Multisim</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check-circle" class="text-primary mr-2 w-4 h-4"></i>
+                            <span>Python</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 bg-slate-800/50 p-6 rounded-xl border border-slate-700 neon-border" data-aos="fade-up">
+                <h3 class="text-xl font-semibold mb-4">Experience</h3>
+                <p class="text-slate-300">Fresher</p>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-8 neon-text">Education & Training</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 neon-border">
+                    <h3 class="text-xl font-semibold mb-2">Asansol North Point School</h3>
+                    <p class="text-slate-400 mb-2">Matriculation</p>
+                    <p class="text-slate-300">2021</p>
+                </div>
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 neon-border">
+                    <h3 class="text-xl font-semibold mb-2">Bengal College of Polytechnic</h3>
+                    <p class="text-slate-400 mb-2">Diploma in Electrical Engineering</p>
+                    <p class="text-slate-300">2024</p>
+                </div>
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 neon-border">
+                    <h3 class="text-xl font-semibold mb-2">Asansol Engineering College</h3>
+                    <p class="text-slate-400 mb-2">B.Tech in Electrical Engineering</p>
+                    <p class="text-slate-300">Ongoing</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-8 neon-text">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 neon-border">
+                    <h3 class="text-xl font-semibold mb-2">Obstacle Avoiding Robot</h3>
+                    <p class="text-slate-300 mb-4">Arduino-based robot with ultrasonic sensors for autonomous navigation.</p>
+                    <button class="view-3d px-4 py-2 rounded-full bg-primary/10 border border-primary/30 hover:bg-primary/20 transition-all flex items-center space-x-2 neon-border">
+                        <i data-feather="eye" class="w-4 h-4"></i>
+                        <span>View 3D Mechanism</span>
+                    </button>
+                </div>
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 neon-border">
+                    <h3 class="text-xl font-semibold mb-2">Solar Tracking System</h3>
+                    <p class="text-slate-300 mb-4">Photovoltaic panel with dual-axis solar tracking for maximum efficiency.</p>
+                    <button class="view-3d px-4 py-2 rounded-full bg-primary/10 border border-primary/30 hover:bg-primary/20 transition-all flex items-center space-x-2 neon-border">
+                        <i data-feather="eye" class="w-4 h-4"></i>
+                        <span>View 3D Mechanism</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activities & Honors Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-8 neon-text">Activities & Honors</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 neon-border">
+                    <h3 class="text-xl font-semibold mb-2">Robotics Club</h3>
+                    <p class="text-slate-300">Designed robots using Arduino</p>
+                </div>
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 neon-border">
+                    <h3 class="text-xl font-semibold mb-2">Renewable Energy Society</h3>
+                    <p class="text-slate-300">Solar-based rural electrification projects</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-8 neon-text">Languages</h2>
+            <div class="flex flex-wrap gap-4">
+                <span class="px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary">Hindi — First Language</span>
+                <span class="px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary">English — Intermediate (B1)</span>
+            </div>
+        </section>
+
+        <!-- Accomplishments Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-8 neon-text">Accomplishments</h2>
+            <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 neon-border">
+                <h3 class="text-xl font-semibold mb-2">Best Innovative Project Award</h3>
+                <p class="text-slate-300">Obstacle Avoiding Robotic Vehicle (2024)</p>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-8 neon-text">Certifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 neon-border">
+                    <h3 class="text-xl font-semibold mb-2">AutoCAD Electrical</h3>
+                    <p class="text-slate-400 mb-2">Autodesk Certified</p>
+                    <p class="text-slate-300">2023</p>
+                </div>
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 neon-border">
+                    <h3 class="text-xl font-semibold mb-2">SolidWorks Electrical</h3>
+                    <p class="text-slate-400 mb-2">Dassault Systèmes Certified</p>
+                    <p class="text-slate-300">2023</p>
+                </div>
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 neon-border">
+                    <h3 class="text-xl font-semibold mb-2">MATLAB & Simulink for Engineers</h3>
+                    <p class="text-slate-400 mb-2">MathWorks Training</p>
+                    <p class="text-slate-300">2022</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3D Mechanism Popup -->
+        <div id="mechanismModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-sm">
+            <div class="relative w-full max-w-4xl h-[80vh] bg-slate-900 rounded-xl border border-primary/50 overflow-hidden">
+                <button id="closeModal" class="absolute top-4 right-4 z-50 p-2 rounded-full bg-slate-800/80 hover:bg-slate-700 transition-all">
+                    <i data-feather="x" class="w-6 h-6 text-white"></i>
+                </button>
+                <div id="mechanismContainer" class="w-full h-full"></div>
+                <div class="absolute bottom-4 left-0 right-0 text-center text-slate-300">
+                    <p>Use mouse to rotate, scroll to zoom</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Get in Touch Section -->
+        <section class="mb-20" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-8 neon-text">Get in Touch</h2>
+            <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700 neon-border">
+                <p class="text-lg text-slate-300 mb-8 leading-relaxed">
+                    "Open to internships, entry-level roles, and collaborative projects in electrical engineering, control systems, and renewable energy."
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="mailto:rajvardhanprasad625@gmail.com" class="px-6 py-3 rounded-full bg-primary hover:bg-primary/90 text-white font-medium transition-all flex items-center space-x-2 neon-border">
+                        <i data-feather="mail" class="w-5 h-5"></i>
+                        <span>Email Me</span>
+                    </a>
+                    <a href="tel:+9197496404599" class="px-6 py-3 rounded-full bg-primary/10 hover:bg-primary/20 text-white font-medium transition-all flex items-center space-x-2 neon-border">
+                        <i data-feather="phone" class="w-5 h-5"></i>
+                        <span>Call</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/80 py-8 border-t border-slate-800">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-slate-400">© <span id="year"></span> Rajvardhan Prasad • Electrical Engineer</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize animations and icons
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+        
+        // Update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // 3D Mechanism Viewer
+        function init3DViewer() {
+            const container = document.getElementById('mechanismContainer');
+            const modal = document.getElementById('mechanismModal');
+            const closeBtn = document.getElementById('closeModal');
+
+            // Setup scene
+            const scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x0f172a);
+            
+            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.z = 5;
+
+            const renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            container.appendChild(renderer.domElement);
+
+            // Add controls
+            const controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.05;
+
+            // Add lights
+            const ambientLight = new THREE.AmbientLight(0x404040);
+            scene.add(ambientLight);
+
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+            directionalLight.position.set(1, 1, 1);
+            scene.add(directionalLight);
+
+            // Add gears
+            const gearGeometry = new THREE.CylinderGeometry(1, 1, 0.2, 32);
+            const gearMaterial = new THREE.MeshPhongMaterial({ 
+                color: 0x3b82f6,
+                specular: 0x8b5cf6,
+                shininess: 30
+            });
+
+            const gear1 = new THREE.Mesh(gearGeometry, gearMaterial);
+            gear1.position.x = -1.5;
+            scene.add(gear1);
+
+            const gear2 = new THREE.Mesh(gearGeometry, gearMaterial);
+            gear2.position.x = 1.5;
+            scene.add(gear2);
+
+            // Animation loop
+            function animate() {
+                requestAnimationFrame(animate);
+                
+                gear1.rotation.z += 0.01;
+                gear2.rotation.z -= 0.01;
+                
+                controls.update();
+                renderer.render(scene, camera);
+            }
+
+            animate();
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                camera.aspect = container.clientWidth / container.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.clientWidth, container.clientHeight);
+            });
+
+            // Modal controls
+            closeBtn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+
+            // Show modal button (add this to your projects section)
+            document.querySelectorAll('.view-3d').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    modal.classList.remove('hidden');
+                });
+            });
+        }
+
+        // Initialize when page loads
+        window.addEventListener('load', init3DViewer);
+
+        // Add hover effects to all cards
+        document.querySelectorAll('.neon-border').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.boxShadow = '0 0 12px rgba(59, 130, 246, 0.8), 0 0 24px rgba(139, 92, 246, 0.6)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.boxShadow = '0 0 8px rgba(59, 130, 246, 0.6), 0 0 16px rgba(139, 92, 246, 0.4)';
+            });
+        });
+    </script>
+</body>
+</html>
